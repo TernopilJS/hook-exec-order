@@ -1,0 +1,11 @@
+.block {
+  padding: 1em;
+}
+
+.block:before {
+  content: '►';
+}
+
+.block > .block {
+  margin-right: -1em;
+}

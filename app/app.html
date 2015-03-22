@@ -1,0 +1,20 @@
+<head>
+  <title>Hook execution order</title>
+</head>
+
+<body>
+  <h1>MeteorJS Template: hook execution order.</h1>
+  {{> Block level=7}}
+</body>
+
+<template name="Block">
+  <div class="block">
+    <b>Created:</b> {{creationOrder}}-th;
+    <b>Rendered:</b> <span class="renderingOrder"></span>-th.
+    {{#with decrement level}}
+      {{#if this}}
+        {{> Block level=this}}
+      {{/if}}
+    {{/with}}
+  </div>
+</template>
